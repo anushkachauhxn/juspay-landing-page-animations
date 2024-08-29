@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 // constants
 import { GLOBAL_MENU_OPTIONS } from "../../Common/Constants";
 // style imports
@@ -9,18 +11,57 @@ import GlobeIcon from "../../Assets/globe-icon.svg";
 import ChevronIcon from "../../Assets/chevron-right.svg";
 
 const Navbar = () => {
+  gsap.registerPlugin(useGSAP);
+  const container = useRef();
+  useGSAP(() => {
+    let tl = gsap.timeline({ delay: 1 });
+    tl.addLabel("start");
+
+    // Logo Animation
+    tl.fromTo(".logo-icon",
+      { x: 25, rotation: 200, opacity: 0 },
+      { x: 0, rotation: 0, opacity: 1, duration: 1.5, ease: "power2.in" },
+      "start"
+    )
+    .addLabel("logo-finished");
+    
+    // Letter Animation
+    tl.fromTo(".letter-0",
+      { y: 10, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" },
+      "logo-finished"
+    )
+    .fromTo(".letter-1",
+      { y: 10, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, delay: 0.2, ease: "power2.out" },
+      "logo-finished"
+    )
+    .fromTo(".letter-2",
+      { y: 10, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, delay: 0.4, ease: "power2.out" },
+      "logo-finished"
+    );
+
+    // Items Animation
+    tl.fromTo(".nav-item, .nav-btn",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.in" },
+      "start"
+    );
+  }, { scope: container });
+
   return (
-    <nav class="navbar">
+    <nav class="navbar" ref={container}>
       {/* Logo */}
       <div class="logo">
         <a href="#">
-          <img src={LogoIcon} alt="logo" />
-          <span className="letter">J</span>
-          <span className="letter">U</span>
-          <span className="letter">S</span>
-          <span className="letter">P</span>
-          <span className="letter">A</span>
-          <span className="letter">Y</span>
+          <img class="logo-icon" src={LogoIcon} alt="logo" />
+          <span className="letter letter-2">J</span>
+          <span className="letter letter-1">U</span>
+          <span className="letter letter-0">S</span>
+          <span className="letter letter-0">P</span>
+          <span className="letter letter-1">A</span>
+          <span className="letter letter-2">Y</span>
         </a>
       </div>
 
@@ -33,7 +74,7 @@ const Navbar = () => {
         </ul>
 
         <ul class="nav-btns">
-          <li class="icon-btn">
+          <li class="nav-btn icon-btn">
             <img src={GlobeIcon} alt="globe" />
             <div className="global-menu">
               <p className="menu-title">REGION</p>
@@ -50,7 +91,7 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li class="cta-btn">
+          <li class="nav-btn cta-btn">
             <a href="">
               Contact us
               <img src={ChevronIcon} alt="icon" />
