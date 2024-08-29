@@ -43,13 +43,12 @@ const GlobalOutcomes = () => {
         opacity: 1,
         duration: 1,
         delay: 1,
-        stagger: {
-          amount: 0.7,
-          from: "center",
-          axis: "x",
-          grid: [15, 0],
-          ease: "power2.in"
-        }
+        stagger: function (index, target, list) {
+          const mid = 7, each = 0.1;
+          let dist = Math.abs(mid - index);
+          let delay = ((mid - dist) * each).toFixed(1);
+          return delay;
+        }  
       },
       "start"
     );
