@@ -24,28 +24,28 @@ const Navbar = () => {
       "start"
     )
     .addLabel("logo-finished");
-    
+
     // Letter Animation
-    tl.fromTo(".letter-0",
+    tl.fromTo(".letter",
       { y: 10, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: {
+          each: 0.1,
+          from: "center",
+          grid: "auto",
+          ease: "power2.inOut"
+        }
+      },
       "logo-finished"
     )
-    .fromTo(".letter-1",
-      { y: 10, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, delay: 0.2, ease: "power2.out" },
-      "logo-finished"
-    )
-    .fromTo(".letter-2",
-      { y: 10, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, delay: 0.4, ease: "power2.out" },
-      "logo-finished"
-    );
 
     // Items Animation
     tl.fromTo(".nav-item, .nav-btn",
       { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.in" },
+      { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power2.in" },
       "start"
     );
   }, { scope: container });
