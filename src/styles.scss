@@ -38,11 +38,6 @@ button {
   display: flex;
   align-items: center;
 }
-@mixin flex-align-center-col {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 @mixin flex-justify-center {
   display: flex;
   justify-content: center;
@@ -51,4 +46,16 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@mixin flex-center-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin flex-align-center-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

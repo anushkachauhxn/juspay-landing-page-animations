@@ -1,9 +1,9 @@
 @import "../../styles.scss";
 
 .global-outcomes {
-  padding: 0 20px;
-  height: calc(100vh - 81.5px);
-  @include flex-align-center-col;
+  padding: 40px 20px;
+  height: 100vh;
+  @include flex-center-col;
   background: url("../../Assets/global-bg.svg") no-repeat center/cover;
 
   .heading {

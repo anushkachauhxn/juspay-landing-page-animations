@@ -3,8 +3,11 @@
 .navbar {
   margin: 24px;
   padding: 12px 24px;
+  width: 100%;
   min-width: 976px;
   max-width: 1392px;
+  position: absolute;
+  top: 24px;
   @include flex-space-between;
   border-radius: 61px;
   border: 1px solid rgba(33, 31, 31, 1);
