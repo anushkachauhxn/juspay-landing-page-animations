@@ -8,7 +8,7 @@ import "./styles.scss";
 // icon imports
 import LogoIcon from "../../Assets/logo.svg";
 import GlobeIcon from "../../Assets/globe-icon.svg";
-import ChevronIcon from "../../Assets/chevron-right.svg";
+import ChevronIcon from "../../Assets/chevron-right-blue.svg";
 
 const Navbar = () => {
   gsap.registerPlugin(useGSAP);
@@ -51,11 +51,11 @@ const Navbar = () => {
   }, { scope: container });
 
   return (
-    <nav class="navbar" ref={container}>
+    <nav className="navbar" ref={container}>
       {/* Logo */}
-      <div class="logo">
+      <div className="logo">
         <a href="#">
-          <img class="logo-icon" src={LogoIcon} alt="logo" />
+          <img className="logo-icon" src={LogoIcon} alt="logo" />
           <span className="letter letter-2">J</span>
           <span className="letter letter-1">U</span>
           <span className="letter letter-0">S</span>
@@ -66,15 +66,15 @@ const Navbar = () => {
       </div>
 
       {/* Nav Items */}
-      <div class="nav-items">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="">About us</a></li>
-          <li class="nav-item"><a href="">Docs</a></li>
-          <li class="nav-item"><a href="">Integrations</a></li>
+      <div className="nav-items">
+        <ul className="nav-list">
+          <li className="nav-item"><a href="">About us</a></li>
+          <li className="nav-item"><a href="">Docs</a></li>
+          <li className="nav-item"><a href="">Integrations</a></li>
         </ul>
 
-        <ul class="nav-btns">
-          <li class="nav-btn icon-btn">
+        <ul className="nav-btns">
+          <li className="nav-btn icon-btn">
             <img src={GlobeIcon} alt="globe" />
             <div className="global-menu">
               <p className="menu-title">REGION</p>
@@ -91,7 +91,7 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li class="nav-btn cta-btn">
+          <li className="nav-btn cta-btn">
             <a href="">
               Contact us
               <img src={ChevronIcon} alt="icon" />

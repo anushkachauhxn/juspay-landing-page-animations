@@ -20,6 +20,13 @@ a {
 li {
   list-style: none;
 }
+button {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
 // Mixins
 @mixin flex-center {
@@ -30,6 +37,11 @@ li {
 @mixin flex-align-center {
   display: flex;
   align-items: center;
+}
+@mixin flex-align-center-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 @mixin flex-space-between {
   display: flex;

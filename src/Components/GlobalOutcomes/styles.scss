@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+.global-outcomes {
+  padding: 0 20px;
+  height: calc(100vh - 81.5px);
+  @include flex-align-center-col;
+  background: url("../../Assets/global-bg.svg") no-repeat center/cover;
+
+  .heading {
+    font-size: 94px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .letters {
+    @include flex-center;
+    span {
+      font-size: 97px;
+      font-weight: 700;
+      background: radial-gradient(75.98% 130.43% at 18.04% 28.7%, #09f, #188edd 60.59%, #0561e2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .description {
+    padding: 115px 3.5rem 0;
+    font-size: 19.027px;
+    font-weight: 300;
+    color: rgb(188 188 191);
+    text-align: center;
+    line-height: 1.6;
+    span {
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  .main-cta-btn {
+    margin-top: 64px;
+    padding: 1.25rem 1.75rem;
+    @include flex-center;
+    column-gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    background-image: linear-gradient(105deg, #016fd0 4.61%, #03357c 162.29%) !important;
+    border-radius: 9999px;
+    &:hover {
+      background-image: linear-gradient(to right,#016fd0,#044aad,#03357c) !important;
+    }
+  }
+}
