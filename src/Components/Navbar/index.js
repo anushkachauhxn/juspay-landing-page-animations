@@ -14,7 +14,7 @@ const Navbar = () => {
   gsap.registerPlugin(useGSAP);
   const container = useRef();
   useGSAP(() => {
-    let tl = gsap.timeline({ delay: 1 });
+    let tl = gsap.timeline({ delay: 0.5 });
     tl.addLabel("start");
 
     // Logo Animation

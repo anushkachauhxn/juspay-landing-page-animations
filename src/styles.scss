@@ -43,6 +43,10 @@ button {
   align-items: center;
   flex-direction: column;
 }
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
 @mixin flex-space-between {
   display: flex;
   justify-content: space-between;

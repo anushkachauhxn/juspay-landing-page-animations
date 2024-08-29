@@ -1,29 +1,71 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+// constants
+import { GLOBAL_OUTCOMES_ANIMATION_LETTERS } from "../../Common/Constants";
 // style imports
 import "./styles.scss";
 // icon imports
 import ChevronIcon from "../../Assets/chevron-right.svg";
 
 const GlobalOutcomes = () => {
+  gsap.registerPlugin(useGSAP);
+  const container = useRef();
+  useGSAP(() => {
+    let tl = gsap.timeline({ delay: 0 });
+    tl.addLabel("start");
+    
+    // Text Animation
+    tl.fromTo(".heading, .description",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.in" },
+      "start"
+    );
+
+    // Button Animation
+    tl
+    .fromTo(".main-cta-btn",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, delay: 0.8, ease: "power2.in" },
+      "start"
+    )
+    .fromTo(".btn-text",
+      { width: 0 },
+      { width: "100%", duration: 1, delay: 1, ease: "power2.in" },
+      "start"
+    );
+
+    // Letter Animation
+    tl.fromTo(".letter",
+      { y: 0, opacity: 0 },
+      {
+        y: "-400%",
+        opacity: 1,
+        duration: 1,
+        delay: 1,
+        stagger: {
+          amount: 0.7,
+          from: "center",
+          axis: "x",
+          grid: [15, 0],
+          ease: "power2.in"
+        }
+      },
+      "start"
+    );
+  }, { scope: container });
+
   return (
-    <div className="global-outcomes">
+    <div className="global-outcomes" ref={container}>
       <div className="heading">Payments designed for</div>
       <div className="letters">
-        <span>G</span>
-        <span>L</span>
-        <span>O</span>
-        <span>B</span>
-        <span>A</span>
-        <span>L</span>
-        <span>&nbsp;</span>
-        <span>O</span>
-        <span>U</span>
-        <span>T</span>
-        <span>C</span>
-        <span>O</span>
-        <span>M</span>
-        <span>E</span>
-        <span>S</span>
+        {GLOBAL_OUTCOMES_ANIMATION_LETTERS.map((letters, index) => (
+          <ul key={index} className="letter">
+            {letters.map((letter, index) => (
+              <li key={index}><span>{letter}</span></li>
+            ))}
+          </ul>
+        ))}
       </div>
       <div className="description">
         <span>Juspay</span> powers leading enterprises around the world, <br/>
@@ -31,8 +73,8 @@ const GlobalOutcomes = () => {
         fraud reduction and seamless customer experiences.
       </div>
       <button className="main-cta-btn">
-        Schedule a demo
-        <img src={ChevronIcon} alt="" />
+        <div className="btn-text">Schedule a demo</div>
+        <div><img src={ChevronIcon} alt="" /></div>
       </button>
     </div>
   )

@@ -12,10 +12,15 @@
     color: #fff;
   }
   .letters {
-    @include flex-center;
+    @include flex-justify-center;
+    $height: 100px;
+    height: $height;
+    line-height: $height;
+    overflow: hidden;
     span {
       font-size: 97px;
       font-weight: 700;
+      line-height: $height;
       background: radial-gradient(75.98% 130.43% at 18.04% 28.7%, #09f, #188edd 60.59%, #0561e2);
       background-clip: text;
       -webkit-background-clip: text;
@@ -46,6 +51,10 @@
     color: #fff;
     background-image: linear-gradient(105deg, #016fd0 4.61%, #03357c 162.29%) !important;
     border-radius: 9999px;
+    .btn-text {
+      white-space: nowrap;
+      overflow: hidden;
+    }
     &:hover {
       background-image: linear-gradient(to right,#016fd0,#044aad,#03357c) !important;
     }
