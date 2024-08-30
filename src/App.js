@@ -5,6 +5,8 @@ import GlobalOutcomes from "./Components/GlobalOutcomes";
 import BrandsMarquee from "./Components/BrandsMarquee";
 // style imports
 import "./App.scss";
+// video import
+import GlobalVideo from "./Assets/global-second-fold.webm";
 
 const App = () => {
   return (
@@ -18,6 +20,15 @@ const App = () => {
       <div className="section section-2">
         <div className="container">
           <BrandsMarquee />
+          <video 
+            src={GlobalVideo}
+            className="global-video"
+            autoPlay
+            loop
+            playsInline
+            muted={true}
+            preload="auto"
+          ></video>
         </div>
       </div>
     </div>
