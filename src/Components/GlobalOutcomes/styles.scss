@@ -16,7 +16,11 @@
     $height: 100px;
     height: $height;
     line-height: $height;
+    letter-spacing: -0.04em;
     overflow: hidden;
+    .letter-3, .letter-11 {
+      margin-left: -15px;
+    }
     span {
       font-size: 97px;
       font-weight: 700;

@@ -59,7 +59,7 @@ const GlobalOutcomes = () => {
       <div className="heading">Payments designed for</div>
       <div className="letters">
         {GLOBAL_OUTCOMES_ANIMATION_LETTERS.map((letters, index) => (
-          <ul key={index} className="letter">
+          <ul key={index} className={`letter letter-${index+1}`}>
             {letters.map((letter, index) => (
               <li key={index}><span>{letter}</span></li>
             ))}
