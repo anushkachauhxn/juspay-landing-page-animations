@@ -15,6 +15,10 @@
       width: auto;
       @include flex-space-around;
       column-gap: 4rem;
+      img {
+        height: 4rem;
+        object-fit: contain;
+      }
     }
   }
 }
