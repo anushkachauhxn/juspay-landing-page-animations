@@ -6,7 +6,7 @@ import { GLOBAL_OUTCOMES_ANIMATION_LETTERS } from "../../Common/Constants";
 // style imports
 import "./styles.scss";
 // icon imports
-import ChevronIcon from "../../Assets/chevron-right.svg";
+import ChevronIcon from "../../Assets/icons/chevron-right.svg";
 
 const GlobalOutcomes = () => {
   gsap.registerPlugin(useGSAP);

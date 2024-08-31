@@ -46,6 +46,21 @@ export const GLOBAL_MENU_OPTIONS = [
   }
 ];
 
+export const MAIN_MENU_OPTIONS = [
+  {
+    name: "About",
+    url: "/about"
+  },
+  {
+    name: "Docs",
+    url: "/docs"
+  },
+  {
+    name: "Integrations",
+    url: "/integrations"
+  },
+];
+
 export const GLOBAL_OUTCOMES_ANIMATION_LETTERS = [
   ["€","R","¥","G"],
   ["€","$","€","L"],

@@ -2,13 +2,13 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 // constants
-import { GLOBAL_MENU_OPTIONS } from "../../Common/Constants";
+import { GLOBAL_MENU_OPTIONS, MAIN_MENU_OPTIONS } from "../../Common/Constants";
 // style imports
 import "./styles.scss";
 // icon imports
 import LogoIcon from "../../Assets/logo.svg";
 import GlobeIcon from "../../Assets/globe-icon.svg";
-import ChevronIcon from "../../Assets/chevron-right-blue.svg";
+import ChevronIcon from "../../Assets/icons/chevron-right-blue.svg";
 
 const Navbar = () => {
   gsap.registerPlugin(useGSAP);
@@ -69,9 +69,11 @@ const Navbar = () => {
         {/* Nav Items */}
         <div className="nav-items">
           <ul className="nav-list">
-            <li className="nav-item"><a href="">About us</a></li>
-            <li className="nav-item"><a href="">Docs</a></li>
-            <li className="nav-item"><a href="">Integrations</a></li>
+            {MAIN_MENU_OPTIONS.map((item, index) => (
+              <li className="nav-item" key={index}>
+                <a href={item.url}>{item.name}</a>
+              </li>
+            ))}
           </ul>
 
           <ul className="nav-btns">
