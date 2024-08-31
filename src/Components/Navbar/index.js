@@ -51,55 +51,57 @@ const Navbar = () => {
   }, { scope: container });
 
   return (
-    <nav className="navbar" ref={container}>
-      {/* Logo */}
-      <div className="logo">
-        <a href="#">
-          <img className="logo-icon" src={LogoIcon} alt="logo" />
-          <span className="letter letter-2">J</span>
-          <span className="letter letter-1">U</span>
-          <span className="letter letter-0">S</span>
-          <span className="letter letter-0">P</span>
-          <span className="letter letter-1">A</span>
-          <span className="letter letter-2">Y</span>
-        </a>
-      </div>
+    <div className="navbar-container">
+      <nav className="navbar" ref={container}>
+        {/* Logo */}
+        <div className="logo">
+          <a href="#">
+            <img className="logo-icon" src={LogoIcon} alt="logo" />
+            <span className="letter letter-2">J</span>
+            <span className="letter letter-1">U</span>
+            <span className="letter letter-0">S</span>
+            <span className="letter letter-0">P</span>
+            <span className="letter letter-1">A</span>
+            <span className="letter letter-2">Y</span>
+          </a>
+        </div>
 
-      {/* Nav Items */}
-      <div className="nav-items">
-        <ul className="nav-list">
-          <li className="nav-item"><a href="">About us</a></li>
-          <li className="nav-item"><a href="">Docs</a></li>
-          <li className="nav-item"><a href="">Integrations</a></li>
-        </ul>
+        {/* Nav Items */}
+        <div className="nav-items">
+          <ul className="nav-list">
+            <li className="nav-item"><a href="">About us</a></li>
+            <li className="nav-item"><a href="">Docs</a></li>
+            <li className="nav-item"><a href="">Integrations</a></li>
+          </ul>
 
-        <ul className="nav-btns">
-          <li className="nav-btn icon-btn">
-            <img src={GlobeIcon} alt="globe" />
-            <div className="global-menu">
-              <p className="menu-title">REGION</p>
-              <ul>
-                {GLOBAL_MENU_OPTIONS.map((item, index) => (
-                  <li key={index}>
-                    <a href={item.url} target="_blank">
-                      <img src={item.icon} alt="icon" />
-                      <span>{item.name}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
+          <ul className="nav-btns">
+            <li className="nav-btn icon-btn">
+              <img src={GlobeIcon} alt="globe" />
+              <div className="global-menu">
+                <p className="menu-title">REGION</p>
+                <ul>
+                  {GLOBAL_MENU_OPTIONS.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.url} target="_blank">
+                        <img src={item.icon} alt="icon" />
+                        <span>{item.name}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
 
-          <li className="nav-btn cta-btn">
-            <a href="">
-              Contact us
-              <img src={ChevronIcon} alt="icon" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            <li className="nav-btn cta-btn">
+              <a href="">
+                Contact us
+                <img src={ChevronIcon} alt="icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   )
 }
 

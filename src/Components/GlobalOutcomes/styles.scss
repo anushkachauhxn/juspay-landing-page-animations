@@ -7,9 +7,14 @@
   background: url("../../Assets/global-bg.svg") no-repeat center/cover;
 
   .heading {
+    padding-top: 40px;
     font-size: 94px;
     font-weight: 600;
     color: #fff;
+    text-align: center;
+    @media screen and (max-width: 1084px) {
+      font-size: 88px;
+    }
   }
   .letters {
     @include flex-justify-center;

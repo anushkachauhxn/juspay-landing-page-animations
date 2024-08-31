@@ -2,11 +2,14 @@
 
 .brands-marquee {
   padding: 0 5rem;
-  width: 1428px;
+  max-width: 1720px;
+  width: 100%;
+  @include flex-center;
   overflow: hidden;
 
   .brands {
-    padding: 64px 0;
+    padding: 48px 0;
+    width: 100%;
     @include flex-center;
     column-gap: 4rem;
     overflow: hidden;

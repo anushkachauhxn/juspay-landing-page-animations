@@ -11,14 +11,16 @@
   @include flex-align-center-col;
   .container {
     max-width: 1440px;
+    width: 100%;
     position: relative;
   }
 }
 
 .section-2 {
-  height: max(100vh, max-content);
+  min-height: 100vh;
+  height: 100%;
   border-radius: 52px 52px 0 0;
-  background: #17191B;
+  background-color: #17181B;
   .global-video {
     max-height: 150vw;
     width: 100%;
