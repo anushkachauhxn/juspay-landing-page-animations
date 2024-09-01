@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 // constants
 import { BRANDS_LIST } from "../../Common/Constants";
 // style imports
 import "./styles.scss";
-import gsap, { Linear } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { TimelineMax } from "gsap/gsap-core";
 
 const BrandsMarquee = () => {
   gsap.registerPlugin(useGSAP);

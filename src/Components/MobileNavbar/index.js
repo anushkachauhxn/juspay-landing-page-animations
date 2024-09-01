@@ -29,7 +29,7 @@ const MobileNavbar = () => {
       <nav className="navbar">
         {/* Logo */}
         <div className="logo">
-          <a href="#">
+          <a href="/">
             <img className="logo-icon" src={LogoIcon} alt="logo" />
           </a>
         </div>
@@ -49,7 +49,7 @@ const MobileNavbar = () => {
               <ul>
                 {GLOBAL_MENU_OPTIONS.map((item, index) => (
                   <li key={index}>
-                    <a href={item.url} target="_blank">
+                    <a href={item.url} target="_blank" rel="noreferrer">
                       <img src={item.icon} alt="icon" />
                       <span>{item.name}</span>
                     </a>
