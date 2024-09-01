@@ -9,6 +9,11 @@
   transform: translateX(-50%);
   @include flex-center;
   z-index: 1000;
+  // Viewport Display
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+  
   .navbar {
     padding: 12px 24px;
     width: 100%;

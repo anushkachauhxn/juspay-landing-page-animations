@@ -1,6 +1,7 @@
 import React from "react";
 // component imports
 import Navbar from "./Components/Navbar";
+import MobileNavbar from "./Components/MobileNavbar";
 import GlobalOutcomes from "./Components/GlobalOutcomes";
 import BrandsMarquee from "./Components/BrandsMarquee";
 // style imports
@@ -14,6 +15,7 @@ const App = () => {
       <div className="section">
         <div className="container">
           <Navbar />
+          <MobileNavbar />
           <GlobalOutcomes />
         </div>
       </div>

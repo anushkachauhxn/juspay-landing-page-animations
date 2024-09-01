@@ -1,0 +1,122 @@
+@import "../../styles.scss";
+
+.mobile-navbar-container {
+  padding: 12px 20px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flex-center;
+  z-index: 1000;
+  // Viewport Display
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 8px 12px;
+    width: 100%;
+    @include flex-space-between;
+    border-radius: 61px;
+    border: 2px solid rgba(33, 31, 31, 1);
+  
+    .nav-items {
+      @include flex-center;
+      column-gap: 12px;
+      .nav-btn {
+        width: 40px;
+        height: 40px;
+        @include flex-center;
+      }
+      .global-item {
+        position: relative;
+        .global-btn {
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+          }
+        }
+      }
+      .menu-btn {
+        padding: 8px;
+        border-radius: 8px;
+        &:focus {
+          outline: 1.5px solid rgb(59 130 246 / .5);
+        }
+        img.menu-icon {
+          height: 32px;
+          width: 24px;
+          object-fit: contain;
+        }
+        img.close-iconm {
+          height: 16px;
+          width: 16px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .global-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: -1rem;
+      color: #fff;
+      border-radius: 0.5rem;
+      background-color: #2D2D2D;
+      .menu-title {
+        padding: .75rem 1.5rem;
+        font-size: .875rem;
+        color: #888888;
+        border-bottom: 1px solid rgb(60, 54, 54);
+      }
+      li {
+        padding: .75rem 1.5rem;
+        font-size: 12px;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        a {
+          @include flex-align-center;
+          column-gap: .75rem;
+          span {
+            white-space: nowrap;
+          }
+          &:hover {
+            font-weight: 400;
+          }
+        }
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+    .main-menu {
+      padding: 1.25rem .5rem;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 1rem;
+      border-radius: 1rem;
+      background-color: #f3f8ff;
+      li {
+        padding: .75rem;
+        font-size: 14px;
+        font-weight: 600;
+        color: #394762;
+        a {
+          @include flex-align-center;
+          column-gap: .75rem;
+          span {
+            white-space: nowrap;
+          }
+        }
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
