@@ -71,6 +71,11 @@ const GlobalOutcomes = () => {
         simplifying global coverage, orchestration, conversions, <br/>
         fraud reduction and seamless customer experiences.
       </div>
+      <div className="description description-sm">
+        Simplify <span>global coverage</span>, optimise<br/>
+        costs, improve conversions, and<br/>
+        minimise payment operations.
+      </div>
       <button className="main-cta-btn">
         <div className="btn-text">Schedule a demo</div>
         <div><img src={ChevronIcon} alt="" /></div>

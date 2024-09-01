@@ -38,7 +38,7 @@
   }
   .description {
     padding: 115px 3.5rem 0;
-    font-size: 19.027px;
+    font-size: 19px;
     font-weight: 300;
     color: rgb(188 188 191);
     text-align: center;
@@ -46,6 +46,11 @@
     span {
       font-weight: 600;
       color: #fff;
+    }
+    &.description-sm {
+      padding-top: 60px;
+      display: none;
+      font-size: 14px;
     }
   }
 
@@ -66,6 +71,29 @@
     }
     &:hover {
       background-image: linear-gradient(to right,#016fd0,#044aad,#03357c) !important;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .heading {
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .letters {
+      height: 40px;
+      line-height: 48px;
+      .letter-3, .letter-11 {
+        margin-left: -6px;
+      }
+      span {
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+    .description {
+      display: none;
+      &.description-sm {
+        display: block;
+      }
     }
   }
 }
